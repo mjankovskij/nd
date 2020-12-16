@@ -126,7 +126,7 @@ place_in_row atsitiktinis skaičius nuo 0 iki 100.
 */
 echo '<h3>5............................................................................................</h3>';
 $array = [];
-while(count($array)<30) {
+while (count($array) < 30) {
     $user_id = rand(1, 1000000);
     $place_in_row = rand(1, 100);
     if (in_array($user_id, array_column($array, 'user_id')) || in_array($place_in_row, array_column($array, 'place_in_row'))) {
@@ -154,7 +154,7 @@ print_r($array);
 echo '</pre>';
 
 usort($array, function ($a, $b) {
-    return $a['place_in_row'] < $b['place_in_row'];
+    return $b['place_in_row'] <=> $a['place_in_row'];
 });
 
 echo 'Mazejancia tvarka pagal place_in_row:<pre>';
@@ -168,8 +168,9 @@ Elementus užpildykite stringais iš atsitiktinai sugeneruotų lotyniškų raid�
 */
 echo '<h3>7............................................................................................</h3>';
 foreach ($array as $key => $item) {
-    $name = substr(str_shuffle("abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"), 0, rand(5, 15));
-    $surname = substr(str_shuffle("abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"), 0, rand(5, 15));
+    $name = $surname = '';
+    foreach (range(0, rand(4, 14)) as $i) $name .= chr(rand(97, 122));
+    foreach (range(0, rand(4, 14)) as $i) $surname .= chr(rand(97, 122));
     $array[$key] += array(
         "name" => $name,
         "surname" => $surname,
@@ -193,12 +194,11 @@ Masyvo reikšmes užpildykite pagal taisyklę:
 echo '<h3>8............................................................................................</h3>';
 $array = [];
 foreach (range(0, 9) as $i) {
-    $rand = rand(0, 5);
-    if (!$rand) {
-        $array[$i] = rand(0, 10);
-    }
-    foreach (range(0, $rand) as $u) {
-        $array[$i][$u] = rand(0, 10);
+    $rand = rand(0, 4);
+    if ($rand) {
+        foreach (range(0, $rand) as $_) $array[$i][] = rand(0, 10);
+    } else {
+        $array[] = rand(0, 10);
     }
 }
 
@@ -250,8 +250,8 @@ foreach (range(0, 9) as $i) {
         $value = explode(' ', '# % + * @ 裡')[rand(0, 5)];
         $color = substr(md5(rand(0, 99)), 0, 6);
         $array[$i][$u] = array(
-            "value" => $value,
-            "color" => "#$color"
+            'value' => $value,
+            'color' => "#$color"
         );
     }
 }
