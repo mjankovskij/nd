@@ -90,11 +90,8 @@ Išrūšiuokite antro lygio masyvus pagal abėcėlę (t.y. tuos kur su raidėm).
 */
 echo '<h3>3............................................................................................</h3>';
 $array = [];
-
 foreach (range(0, 9) as $i) {
-    $array[$i] = [];
-    $rand = rand(2, 20);
-    foreach (range(0, $rand) as $u) {
+    foreach (range(0, rand(2, 20)) as $_) {
         $array[$i][] = chr(rand(65, 90));
     }
     print_r($array[$i]);
@@ -129,22 +126,16 @@ place_in_row atsitiktinis skaičius nuo 0 iki 100.
 */
 echo '<h3>5............................................................................................</h3>';
 $array = [];
-foreach (range(0, 29) as $i) {
+while(count($array)<30) {
     $user_id = rand(1, 1000000);
     $place_in_row = rand(1, 100);
-    if (in_array($user_id, array_column($array, 'user_id'))) {
-        $i--;
+    if (in_array($user_id, array_column($array, 'user_id')) || in_array($place_in_row, array_column($array, 'place_in_row'))) {
         continue;
     }
-    if (in_array($place_in_row, array_column($array, 'place_in_row'))) {
-        $i--;
-        continue;
-    }
-    $array[$i] = array(
+    $array[] = array(
         "user_id" => $user_id,
         "place_in_row" => $place_in_row
     );
-    // 
 }
 
 echo '<pre>';
