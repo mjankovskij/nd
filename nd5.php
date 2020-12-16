@@ -248,16 +248,16 @@ $array = [];
 foreach (range(0, 9) as $i) {
     foreach (range(0, 9) as $u) {
         $value = explode(' ', '# % + * @ 裡')[rand(0, 5)];
-        $color = substr(md5(rand(0, 99)), 0, 6);
+        $color = '#'.substr(md5(rand(0, 99)), 0, 6);
         $array[$i][$u] = array(
             'value' => $value,
-            'color' => "#$color"
+            'color' => $color
         );
     }
 }
 foreach ($array as $arrays) {
     foreach ($arrays as $item) {
-        echo '<div class=kvadr style=color:' . $item['color'] . '>' . $item['value'] . '</div>';
+        echo '<div class=kvdr style=color:' . $item['color'] . '>' . $item['value'] . '</div>';
     }
     echo '<br>';
 }

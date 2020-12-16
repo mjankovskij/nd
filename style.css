@@ -8,10 +8,10 @@ html {
     margin: 5px;
 }
 
-.kvadr {
+.kvdr {
     height: 20px;
     width: 20px;
-    display: inline-flex;
+    display: inline-block;
 }
 
 .flx {
