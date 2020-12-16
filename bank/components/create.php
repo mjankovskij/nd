@@ -17,21 +17,18 @@ if (
     $lastname != preg_replace('/[^A-Za-z]/', '', $lastname) ||
     $personalId != preg_replace('/[^0-9]/', '', $personalId)
 ) {
-    header("Content-Type: application/json");
     echo json_encode(["error" => 'Prasome patikslinti duomenis.',
     ]);
     return;
 }
 
 if (strlen($firstname) < 3 || strlen($lastname) < 3 || strlen($personalId) != 11) {
-    header("Content-Type: application/json");
     echo json_encode(["error" => 'Varda ir pavarde turi sudaryti bent 3 simboliai, o asmens koda 11 simboliu.',
     ]);
     return;
 }
 
 if (($conn->query("SELECT * FROM accounts WHERE personal_id='$personalId'")->num_rows)) {
-    header("Content-Type: application/json");
     echo json_encode(["error" => 'Sis asmuo jau turi saskaita.',
     ]);
     return;

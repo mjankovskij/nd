@@ -73,7 +73,17 @@
                     <div class='callBack' id='addMessage'></div>
                 </div>
                 <!-- nUIMTI LESU -->
-                <div class="box">444</div>
+                <div class="box">
+                    <p>Atimti lėšų</p>
+                    <form method='POST' id='minus'>
+                        <div class='label'>Saskaitos nr:</div>
+                        <input type='text' id='bNumber' name='bNumber'>
+                        <div class='label'>Suma:</div>
+                        <input type='text' id='amount' name='amount'>
+                        <button id='minus'>Atimti</button>
+                    </form>
+                    <div class='callBack' id='minusMessage'></div>
+                </div>
             </div>
         </div>
 </body>
