@@ -171,10 +171,12 @@ header>nav .link:hover {
     border: 1px solid #2a2a2a;
     border-radius: 2px;
     padding: 5px;
+    transition: 0.3s;
 }
 
 .box>form>input:focus {
-    border: 1px solid #535252;
+    outline: 0;
+    background: rgb(8, 8, 41);
 }
 
 .box>form>button {

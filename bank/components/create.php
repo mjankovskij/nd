@@ -11,7 +11,7 @@ if (empty($_POST['firstname']) || empty($_POST['lastname']) || empty($_POST['per
 $firstname = $_POST['firstname'];
 $lastname = $_POST['lastname'];
 $personalId = $_POST['personalId'];
-
+// Asmens kodas turi būti tikrinamas ar atitinka taisykles. !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 if (
     $firstname != preg_replace('/[^A-Za-z]/', '', $firstname) ||
     $lastname != preg_replace('/[^A-Za-z]/', '', $lastname) ||

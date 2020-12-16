@@ -50,13 +50,14 @@ const renderAccounts = () => {
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
             document.querySelectorAll('.accountsToFill')[0].innerHTML = xmlHttp.responseText;
             const accountsDOM = document.querySelectorAll('.accountsToFill .saskaita');
-            for (let i = 0; i < accountsDOM.length - 1; i++) {
+            for (let i = 0; i < accountsDOM.length; i++) {
                 // istrint saskaita
                 document.querySelectorAll('.box .close')[i].addEventListener('click', () => {
                     if (confirm(`Tikrai istrinti saskaita ${accountsDOM[i].childNodes[2].innerText}, ${accountsDOM[i].childNodes[6].innerText} ?`) == true) {
                         const xmlHttp = new XMLHttpRequest();
                         xmlHttp.onreadystatechange = function() {
                             if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                                alert(xmlHttp.responseText);
                                 renderAccounts();
                             }
                         }
@@ -64,7 +65,6 @@ const renderAccounts = () => {
                         formData.append('b_number', accountsDOM[i].childNodes[2].innerText);
                         xmlHttp.open("post", "./components/deleteAccount.php");
                         xmlHttp.send(formData);
-                        alert('Istrinta');
                     }
                 });
                 // Pridet lesu nukreipimas
@@ -103,7 +103,6 @@ document.querySelector('form button#add').addEventListener('click',
         const xmlHttp = new XMLHttpRequest();
         xmlHttp.onreadystatechange = function() {
             if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-                console.log(xmlHttp.responseText);
                 const data = JSON.parse(xmlHttp.responseText);
                 if (data.error) {
                     document.getElementById('addMessage').innerHTML = `<p class='red'>${data.error}</p>`;

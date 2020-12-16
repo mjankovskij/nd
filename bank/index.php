@@ -1,3 +1,9 @@
+<!-- BETA USER email: admin@admin.lt password: admin -->
+<!-- BETA USER email: admin@admin.lt password: admin -->
+<!-- BETA USER email: admin@admin.lt password: admin -->
+<!-- Nepamirskite sukurti duomenu bazes bank ir eksportuoti failu :) -->
+<!-- By marek@jankovskij.lt -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,7 +80,7 @@
                 </div>
                 <!-- nUIMTI LESU -->
                 <div class="box">
-                    <p>Atimti lėšų</p>
+                    <p>Nuskaičiuoti lėšų</p>
                     <form method='POST' id='minus'>
                         <div class='label'>Saskaitos nr:</div>
                         <input type='text' id='bNumber' name='bNumber'>
