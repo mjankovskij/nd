@@ -52,6 +52,8 @@ for ($i = 0; $i < strlen($str); $i++) {
             echo toH1($tempString);
             $tempString = '';
         }
+    }else{
+        echo $str[$i];
     }
 }
 

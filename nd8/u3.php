@@ -22,15 +22,15 @@ echo '<h1>Apklausa</h1>';
 
 $data = [
     [
-        'foto' => 'elnias',
+        'foto' => 'elnias.jpg',
         'correct' => 'Elnias',
         'answers' => ['Elnias', 'Begemotas', 'Katė', 'Šuo']
     ], [
-        'foto' => 'suo',
+        'foto' => 'suo.jpg',
         'correct' => 'Šuo',
         'answers' => ['Šuo', 'Begemotas', 'Katė', 'Elnias']
     ], [
-        'foto' => 'kate',
+        'foto' => 'kate.jpg',
         'correct' => 'Katė',
         'answers' => ['Begemotas', 'Katė', 'Šuo', 'Elnias']
     ],
@@ -39,7 +39,7 @@ $data = [
 echo '<form method=\'post\'>';
 
 foreach ($data as $key => $item) {
-    echo '<div class=\'box\'> <img src=\'./img/' . $item['foto'] . '.jpg\' alt=\'' . $item['foto'] . '\'>
+    echo '<div class=\'box\'> <img src=\'./img/' . $item['foto'] . '\' alt=\'' . $item['foto'] . '\'>
     Koks tai gyvunas?<br><br>';
     shuffle($item['answers']);
     foreach ($item['answers'] as $answer) {

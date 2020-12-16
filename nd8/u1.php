@@ -1,11 +1,6 @@
 <?php
 
-if(isset($_POST['x']) && isset($_POST['y'])){
-    $x = preg_replace('/[^0-9]/', '', $_POST['x']);
-    $y = preg_replace('/[^0-9]/', '', $_POST['y']);
 
-echo "<b>Atsiųstų skaičių ($x) ir ($y) suma lygi  ".($x+$y).'.</b>';
-}else{
 
 echo '<form method=\'post\'>
 X:
@@ -16,4 +11,9 @@ Y:
 <br>
 <input type=\'submit\' value=\'Sumuoti\'>
 </form>';
+if(isset($_POST['x']) && isset($_POST['y'])){
+    $x = preg_replace('/[^0-9]/', '', $_POST['x']);
+    $y = preg_replace('/[^0-9]/', '', $_POST['y']);
+
+echo "<b>Atsiųstų skaičių ($x) ir ($y) suma lygi  ".($x+$y).'.</b>';
 }

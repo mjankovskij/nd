@@ -53,6 +53,7 @@
         color: #fff;
         border-radius: 3px;
         padding: 5px 10px;
+        cursor: pointer;
     }
 </style>
 
@@ -84,7 +85,6 @@ shuffle($imagesArray);
 // $imagesArray = shuffle($imagesArray);
 // print_r($imagesArray);
 
-if (empty($_POST)) {
     echo '<div class=\'square\'>';
     echo '<div class=\'about\'>
 <div class=\'text\'>Select all images below that match this one:</div>
@@ -100,7 +100,7 @@ if (empty($_POST)) {
     echo '<button  value="' . $randomArray . '" name="key">Verify</button>
  </form>';
     echo '</div>';
-} else {
+    if (!empty($_POST)) {
     $key = $_POST['key'];
     $POSTunique = [];
     foreach ($_POST as $item) $POSTunique[] = preg_replace('/[^0-9A-Za-z]/', '', $item);

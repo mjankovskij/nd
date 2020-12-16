@@ -247,7 +247,9 @@ echo '<h3>10....................................................................
 $array = [];
 foreach (range(0, 9) as $i) {
     foreach (range(0, 9) as $u) {
-        $value = explode(' ', '# % + * @ 裡')[rand(0, 5)];
+        // $value = explode(' ', '# % + * @ 裡')[rand(0, 5)];
+        // or
+        $value = ['#', '%', '+', '*', '@','裡'][rand(0, 5)];
         $color = '#'.substr(md5(rand(0, 99)), 0, 6);
         $array[$i][$u] = array(
             'value' => $value,

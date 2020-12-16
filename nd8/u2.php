@@ -16,7 +16,7 @@ p{
 }
 </style>
 <?php
-// <img src=\''.__DIR__.'\elnias.jpg\' alt=\'elnias\'></div>
+// 
 echo '<h1>Apklausa</h1>
 <div class=\'box\'>
 <img src=\'./img/elnias.jpg\' alt=\'elnias\'></div>
