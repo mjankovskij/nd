@@ -17,7 +17,7 @@ function toH1($str)
 {
     return "<h1>$str</h1>";
 }
-echo toH1('toH1(\'text\')');
+echo toH1('hello');
 
 
 /*
@@ -31,7 +31,7 @@ function toSpecifiedH($str, $h)
 {
     return "<h$h>$str</h$h>";
 }
-echo toSpecifiedH('toSpecifiedH(\'text\', 2)', 2);
+echo toSpecifiedH('pasauli!', 2);
 
 /*
 3.Generuokite atsitiktinį stringą, pasinaudodami kodu md5(time()). 

@@ -196,6 +196,7 @@ button:focus {
     outline: 0;
 }
 
+.login>form>button:hover,
 .box>form>button:hover {
     background: #280eba;
 }
