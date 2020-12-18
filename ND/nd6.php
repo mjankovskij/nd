@@ -17,7 +17,7 @@ function toH1($str)
 {
     return "<h1>$str</h1>";
 }
-echo toH1('hello');
+echo toH1('labas');
 
 
 /*
@@ -64,6 +64,7 @@ for ($i = 0; $i < strlen($str); $i++) {
 echo '<h3>4............................................................................................</h3>';
 function divisionRemainders($str)
 {
+    if($str<0){return 0;}
     $result = 0;
     for ($i = 2; $i < $str; $i++) {
         if ($str % $i == 0) $result += 1;
