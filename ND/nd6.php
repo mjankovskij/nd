@@ -15,6 +15,7 @@
 echo '<h3>1............................................................................................</h3>';
 function toH1($str)
 {
+    $str = is_array($str) ? $str[0] : $str;
     return "<h1>$str</h1>";
 }
 echo toH1('labas');
@@ -39,23 +40,26 @@ Visus skaitmenis stringe įdėkite į h1 tagą.
 Jegu iš eilės eina keli skaitmenys, juos į tagą reikią dėti kartu 
 (h1 atsidaro prieš pirmą ir užsidaro po paskutinio) 
 Keitimui naudokite pirmo uždavinio funkciją;
+// panaudot preg_replace_callback
 */
 echo '<h3>3............................................................................................</h3>';
 
 $str = md5(time());
 echo "String: $str ";
-$tempString = '';
-for ($i = 0; $i < strlen($str); $i++) {
-    if (is_numeric($str[$i])) {
-        $tempString .= $str[$i];
-        if (!isset($str[$i + 1]) || isset($str[$i + 1]) & !is_numeric($str[$i + 1])) {
-            echo toH1($tempString);
-            $tempString = '';
-        }
-    }else{
-        echo $str[$i];
-    }
-}
+echo preg_replace_callback('/\d+/', 'toH1', $str);
+
+// $tempString = '';
+// for ($i = 0; $i < strlen($str); $i++) {
+//     if (is_numeric($str[$i])) {
+//         $tempString .= $str[$i];
+//         if (!isset($str[$i + 1]) || isset($str[$i + 1]) & !is_numeric($str[$i + 1])) {
+//             echo toH1($tempString);
+//             $tempString = '';
+//         }
+//     }else{
+//         echo $str[$i];
+//     }
+// }
 
 /*
 4.Parašykite funkciją, kuri skaičiuotų, iš kiek sveikų skaičių jos argumentas dalijasi be liekanos 
@@ -65,6 +69,7 @@ echo '<h3>4.....................................................................
 function divisionRemainders($str)
 {
     if($str<0){return 0;}
+    $str = round($str);
     $result = 0;
     for ($i = 2; $i < $str; $i++) {
         if ($str % $i == 0) $result += 1;
@@ -72,7 +77,7 @@ function divisionRemainders($str)
     return $result;
 }
 $rand = rand(100000, 999999);
-echo $rand . ' dalinasi be liekanos iš ' . divisionRemainders($rand) . ' skaičių.';
+echo round($rand) . ' dalinasi be liekanos iš ' . divisionRemainders($rand) . ' skaičių.';
 
 
 /*
