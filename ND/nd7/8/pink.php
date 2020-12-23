@@ -15,9 +15,7 @@ Padarykite taip, kad surinkus naršyklėje tiesiogiai adresą į rose.php puslap
 naršyklė būtų peradresuojama į pink.php puslapį. -->
 
 <style>html{background:pink;}</style>
-<?php
 
-?>
 <form action='./rose.php' method='POST'>
   <input type='submit' name='GO TO ROSE' value='GO TO ROSE'>
 </form>

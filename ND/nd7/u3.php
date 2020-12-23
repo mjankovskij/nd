@@ -20,6 +20,7 @@ if (isset($_GET['color'])) {
 
 <form method='get'>
   <input type='text' name='color'>
+  button
   <input type='submit' value='Pakeisti spalva'>
 </form> 
 <!-- marek@jankovskij.lt -->

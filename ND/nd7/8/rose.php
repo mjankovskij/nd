@@ -1,3 +1,11 @@
+<?php
+
+if (empty($_POST)) {
+    header('Location: ./pink.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,13 +23,9 @@ Padarykite taip, kad surinkus naršyklėje tiesiogiai adresą į rose.php puslap
 naršyklė būtų peradresuojama į pink.php puslapį. -->
 
 <style>html{background:#FF66CC;}</style>
-<?php
 
-if (empty($_POST)) {
-    header('Location: ./pink.php');
-}
-echo 'Rose.php';
+Rose.php
 
 
 
-// marek@jankovskij.lt
+<!-- marek@jankovskij.lt -->

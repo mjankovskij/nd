@@ -82,8 +82,7 @@ echo round($rand) . ' dalinasi be liekanos iš ' . divisionRemainders($rand) . '
 
 /*
 5.Sugeneruokite masyvą iš 100 elementų, kurio reikšmės atsitiktiniai skaičiai nuo 33 iki 77. 
-Išrūšiuokite masyvą pagal daliklių be liekanos kiekį mažėjimo tvarka, 
-panaudodami ketvirto uždavinio funkciją.
+Išrūšiuokite masyvą pagal daliklių be liekanos kiekį mažėjimo tvarka, panaudodami ketvirto uždavinio funkciją.
 */
 echo '<h3>5............................................................................................</h3>';
 $array = [];
@@ -106,7 +105,7 @@ Naudodami 4 uždavinio funkciją iš masyvo ištrinkite pirminius skaičius.
 echo '<h3>6............................................................................................</h3>';
 $array = [];
 for ($i = 0; $i < 100; $i++) {
-    array_push($array, rand(333, 777));
+    $array[]= rand(333, 777);
 }
 
 foreach ($array as $key => $item) {
@@ -135,11 +134,11 @@ for ($i = 0; $i < $rand; $i++) {
     $rand2 = rand(10, 30);
     for ($u = 0; $u < $rand2; $u++) {
         if ($i == $rand - 1 && $u == $rand2 - 1) {
-            array_push($array[$i], 0);
+            $array[$i][] = 0;
         } elseif ($u == $rand2 - 1) {
-            array_push($array[$i], $array[$i][0]);
+            $array[$i][] = $array[$i][0];
         } else {
-            array_push($array[$i], rand(0, 10));
+            $array[$i][] = rand(0, 10);
         }
     }
 }
